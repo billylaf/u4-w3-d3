@@ -3,7 +3,6 @@ package lafdilibilal.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import lafdilibilal.entities.Location;
-import lafdilibilal.entities.evento;
 
 public class locationDAO {
     private final EntityManager entityManager;
@@ -28,10 +27,11 @@ public class locationDAO {
 
     }
 
-    public evento findById(int id) {
-        evento fromDB = this.entityManager.find(evento.class, id);
+    public Location findById(long id) {
+        Location fromDB = this.entityManager.find(Location.class, id);
         if (fromDB == null) {
             throw new RuntimeException("Location con ID " + id + " non trovato");
+
         }
         return fromDB;
     }

@@ -7,6 +7,11 @@ import lafdilibilal.dao.eventoDAO;
 import lafdilibilal.dao.locationDAO;
 import lafdilibilal.dao.partecipazioneDA0;
 import lafdilibilal.dao.personaDAO;
+import lafdilibilal.entities.Location;
+import lafdilibilal.entities.evento;
+import lafdilibilal.entities.tipoEvento;
+
+import java.time.LocalDate;
 
 public class Application {
     private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("u4-w3-d3");
@@ -26,9 +31,18 @@ public class Application {
 
         personaDAO.save(aldo);*/
 
-       /* Location cocorico = new Location("cocorico", "riccione");
+        /*Location milanoIpo = new Location("ipodromo", "milano");
 
-        locationDAO.save(cocorico);*/
+        locationDAO.save(milanoIpo);*/
+
+        try {
+            Location FromDB = locationDAO.findById(2);
+            evento cocoEvent;
+            cocoEvent = new evento("concerto sfera", LocalDate.of(2026, 7, 12), "evento speciale di sefra ebbasta", tipoEvento.PUBBLICO, 200000, FromDB);
+            eventoDAO.save(cocoEvent);
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+        }
         System.out.println("Hello World!");
     }
 }

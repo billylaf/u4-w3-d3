@@ -25,7 +25,7 @@ public class evento {
     private int numeroMassimoPartecipanti;
 
     @OneToOne
-    @JoinColumn(name = "location_id")
+    @JoinColumn(name = "id_location")
     private Location location;
 
     @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
@@ -34,7 +34,7 @@ public class evento {
     public evento() {
     }
 
-    public evento(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+    public evento(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti, Location cocoricoFromDB) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
