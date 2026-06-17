@@ -13,6 +13,7 @@ import lafdilibilal.entities.tipoEvento;
 
 import java.time.LocalDate;
 
+
 public class Application {
     private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("u4-w3-d3");
 
@@ -36,9 +37,9 @@ public class Application {
         locationDAO.save(milanoIpo);*/
 
         try {
-            Location FromDB = locationDAO.findById(2);
+            Location FromDB = locationDAO.findById(1);
             evento cocoEvent;
-            cocoEvent = new evento("concerto sfera", LocalDate.of(2026, 7, 12), "evento speciale di sefra ebbasta", tipoEvento.PUBBLICO, 200000, FromDB);
+            cocoEvent = new evento("concerto gue", LocalDate.of(2026, 7, 12), "evento speciale di gue pequeno", tipoEvento.PUBBLICO, 200000, FromDB);
             eventoDAO.save(cocoEvent);
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
