@@ -72,7 +72,9 @@ public class Application {
         }
 /**/
         eventoDAO.getConcertiInStreaming(true).forEach(System.out::println);
+
         eventoDAO.getConcertiPerGenere(Genere.CLASSSICO).forEach(System.out::println);
+
         System.out.println("Hello World!");
     }
 }
