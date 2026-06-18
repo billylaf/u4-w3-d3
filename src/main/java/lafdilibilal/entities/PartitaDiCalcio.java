@@ -1,26 +1,29 @@
 package lafdilibilal.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "partite_di_calcio")
 public class PartitaDiCalcio extends evento {
 
     private String squadra_di_casa;
+
     private String squadra_ospite;
+
     private String squadra_vincente;
+
     private int gol_squadra_di_casa;
+
     private int gol_squadra_ospite;
 
     public PartitaDiCalcio() {
+
     }
 
-    public PartitaDiCalcio(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti,
-                           Location location, String squadra_di_casa, String squadra_ospite, String squadra_vincente,
-                           int gol_squadra_di_casa, int gol_squadra_ospite) {
+
+    public PartitaDiCalcio(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti, Location location, String squadra_di_casa, String squadra_ospite,
+                           String squadra_vincente, int gol_squadra_di_casa, int gol_squadra_ospite) {
         super(titolo, dataEvento, descrizione, tipoEvento, numeroMassimoPartecipanti, location);
         this.squadra_di_casa = squadra_di_casa;
         this.squadra_ospite = squadra_ospite;
