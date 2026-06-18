@@ -2,7 +2,12 @@ package lafdilibilal.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+import lafdilibilal.entities.Concerto;
+import lafdilibilal.entities.Genere;
 import lafdilibilal.entities.evento;
+
+import java.util.List;
 
 public class eventoDAO {
     private final EntityManager entityManager;
@@ -35,5 +40,20 @@ public class eventoDAO {
         return fromDB;
     }
 
-    
+    public List<Concerto> getConcertiInStreaming(boolean streaming) {
+        TypedQuery<Concerto> query = entityManager.createQuery(
+                "SELECT c FROM Concerto c WHERE c.streaming = :streaming", Concerto.class);
+        query.setParameter("streaming", streaming);
+        return query.getResultList();
+    }
+
+    public List<Concerto> getConcertiPerGenere(Genere genere) {
+        TypedQuery<Concerto> query = entityManager.createQuery(
+                "SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
+        query.setParameter("genere", genere);
+        return query.getResultList();
+        // SELECT * FROM concerti WHERE genere = 'POP'
+    }
+
+
 }

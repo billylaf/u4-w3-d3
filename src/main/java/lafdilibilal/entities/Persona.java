@@ -28,6 +28,9 @@ public class Persona {
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Partecipazione> partecipazioni;
 
+    @OneToMany(mappedBy = "vincitore", cascade = CascadeType.ALL)
+    private List<GaraDiAtletica> garaDiAtletica;
+
     public Persona() {
 
     }

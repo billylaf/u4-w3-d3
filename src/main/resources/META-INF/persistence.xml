@@ -7,6 +7,9 @@
         <class>lafdilibilal.entities.Partecipazione</class>
         <class>lafdilibilal.entities.evento</class>
         <class>lafdilibilal.entities.Location</class>
+        <class>lafdilibilal.entities.PartitaDiCalcio</class>
+        <class>lafdilibilal.entities.GaraDiAtletica</class>
+        <class>lafdilibilal.entities.Concerto</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4-w3-d3"/>
             <!-- Nel mio caso la porta è 5433 nel vostro sarà 5432 (ovviamente se non l'avete cambiata) -->
